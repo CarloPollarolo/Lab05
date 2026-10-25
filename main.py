@@ -132,7 +132,7 @@ def main(page: ft.Page):
         # Sezione 3
         ft.Divider(),
         txt_nuovo_strumento,
-        ft.Row(spacing=20,
+        ft.Row(spacing=15,
                controls=[tipo, marca, anno, btn_meno, valore, btn_piu],
                alignment=ft.MainAxisAlignment.CENTER),
         btn_aggiungi,
