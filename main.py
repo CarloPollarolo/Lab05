@@ -38,7 +38,7 @@ def main(page: ft.Page):
     # Tutti i TextField per le info necessarie per aggiungere un nuovo strumento (tipo, marca, anno, contatore posti)
     txt_nuovo_strumento = ft.Text("Aggiungi Nuovo Strumento", size=20)
 
-    tipo = ft.TextField(label="Tipo")
+    tipo = ft.TextField(label="Tipo") #label da il titolo alla casella di testo e poi ci scrivo un valore dentro
     marca = ft.TextField(label="Marca")
     anno = ft.TextField(label="Anno")
     valore = ft.TextField(label="Valore (€)", text_align=ft.TextAlign.RIGHT)
@@ -111,8 +111,8 @@ def main(page: ft.Page):
 
     # Pulsanti per la gestione dell'inserimento di un nuovo strumento
     btn_aggiungi = ft.CupertinoButton("Aggiungi strumento", on_click=aggiungi_strumento)
-    btn_meno = ft.CupertinoButton("-", color="red", on_click=meno)
-    btn_piu = ft.CupertinoButton("+", color="green", on_click=piu)
+    btn_meno = ft.IconButton(ft.Icons.REMOVE, icon_color="red", on_click=meno)
+    btn_piu = ft.IconButton(ft.Icons.ADD, icon_color="green", on_click=piu)
 
     # --- LAYOUT ---
     page.add(
@@ -132,7 +132,7 @@ def main(page: ft.Page):
         # Sezione 3
         ft.Divider(),
         txt_nuovo_strumento,
-        ft.Row(spacing=15,
+        ft.Row(spacing=16,
                controls=[tipo, marca, anno, btn_meno, valore, btn_piu],
                alignment=ft.MainAxisAlignment.CENTER),
         btn_aggiungi,
